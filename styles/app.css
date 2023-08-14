@@ -1,0 +1,118 @@
+html, body {
+  background-color: rgb(0, 0, 0);
+  color: white;
+  width: 100%;
+  height: 100%;
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.horizontal {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  gap: 10px;
+}
+
+header {
+  margin-top: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  gap: 10px;
+}
+
+header .bi {
+  width: 3rem;
+  height: 3rem;
+}
+
+.visualizer {
+  max-width: 90vw;
+  max-height: 70vh;
+}
+
+.btn {
+  padding: 0.5rem 0.5rem;
+  font-size: 2rem;
+  border: 2px white solid;
+  border-radius: 100%;
+  text-align: center;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.no-border {
+  border: none;
+}
+
+.btn.primary {
+  padding: 1rem 1rem;
+  font-size: 3rem;
+}
+
+
+#meta {
+  text-align: left;
+}
+
+.v-fill {
+  padding: 10px 0;
+}
+
+.hidden {
+  display: none;
+}
+
+.bi {
+  width: 1em;
+  height: 1em;
+}
+
+/** Play note btn */
+#play_note.paused .bi-pause-fill {
+  display: none;
+}
+
+#play_note.playing .bi-play-fill {
+  display: none;
+}
+
+/** Record btn */
+#record.muted .bi-mic-fill {
+  display: none;
+}
+
+#record.recording .bi-mic-mute-fill {
+  display: none;
+}
+
+#record.recording {
+  border: 2px rgb(71, 150, 71) solid;
+}
+
+#record.error {
+  /* color: red; */
+  border: 2px red solid;
+}
+
+/** Mute output btn */
+#mute.muted .bi-volume-up-fill {
+  display: none;
+}
+
+#mute.playing .bi-volume-mute-fill {
+  display: none;
+}

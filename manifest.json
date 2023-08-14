@@ -1,0 +1,15 @@
+{
+  "name": "Audio Visualizer",
+  "start_url": "/index.html",
+  "display": "standalone",
+  "icons": [
+    {
+      "src": "icons/icon-60.png",
+      "sizes": "60x60"
+    },
+    {
+      "src": "icons/soundwave_black.svg",
+      "sizes": "any"
+    }
+  ]
+}
