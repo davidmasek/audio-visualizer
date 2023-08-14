@@ -54,6 +54,10 @@ header .bi {
   align-items: center;
 }
 
+a.btn {
+  color: white;
+}
+
 .no-border {
   border: none;
 }
