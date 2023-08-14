@@ -173,15 +173,24 @@ function init() {
   
   const record = document.querySelector("#record");
   const isRecording = () => record.getAttribute("data-recording") !== 'false';
+  const displayRecording = () => {
+    record.setAttribute("data-recording", "true");
+    record.classList.add("recording");
+    record.classList.remove("muted");
+    record.classList.remove("error");
+  }
   let src;
   const startRecordingHelper = () => {
+    if (src && src.mediaStream.active === true) {
+      src.mediaStream.getTracks().forEach(track => track.enabled = true);
+      displayRecording();
+      return;
+    }
     startRecording(audioCtx, analyser).then((s) => {
       src = s;
+      window.src = s;
       if (src) {
-        record.setAttribute("data-recording", "true");
-        record.classList.add("recording");
-        record.classList.remove("muted");
-        record.classList.remove("error");
+        displayRecording();
       } else {
         record.classList.add("error");
       }
@@ -193,10 +202,9 @@ function init() {
       record.setAttribute("data-recording", "false");
       record.classList.remove("recording");
       record.classList.add("muted");
-        // record.textContent = "Record";
 
       if (src) {
-        src.disconnect();
+        src.mediaStream.getTracks().forEach(track => track.enabled = false);
       }
     } else {      
       startRecordingHelper();
