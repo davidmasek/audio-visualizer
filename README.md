@@ -1,9 +1,9 @@
-# Audio Analyzer
+# Audio Visualizer
 
-Audio analyzer using Javascript web API.
+Audio visualizer and analyzer using Javascript web API. Click for <a href="https://davidmasek.github.io/audio-visualizer/">online demo</a>.
 
-<img src="screenshot_notes.png">
 <img src="screenshot_raw.png">
+<img src="screenshot_notes.png">
 
 # Credits/Sources
 
